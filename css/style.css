@@ -151,6 +151,8 @@ footer img{
 }
 
 .scroll-up, .scroll-down {
+  background: none; 
+  border: none; 
   width: 20px;
   height: 20px;
   border-left: 2px solid;

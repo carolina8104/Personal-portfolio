@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carolina Rodrigues - Portfolio</title>
+    <title>Carolina Rodrigues - Projects</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
 
@@ -15,17 +15,19 @@
         <li><a href="work.html">Work</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-        <button id="theme-toggle" aria-label="Alternar tema">☀︎</button>
+      <button id="theme-toggle" aria-label="Alternar tema">☀︎</button>
     </nav>
 
     <main>
       <section>
-        <h1>Work</h1>
-        <p>Here you can explore some of the projects I’ve worked on — each one tells a bit of my creative journey. <br> 
-        You’ll find more information, visuals, and design details behind the ideas ✿.</p>
-        <p>
+        <div class="content">
+          <h1>Work</h1>
+          <p>Here you can explore some of the projects I’ve worked on — each one tells a bit of my creative journey. <br> 
+            You’ll find more information, visuals, and design details behind the ideas ✿.</p>
+          <p>
+        </div>
         <div class="decor">
-          <svg id="laranja_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="246" height="248" viewBox="0 0 306 208">
+          <svg id="laranja_2" class="floating" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="246" height="248" viewBox="0 0 306 208">
             <image xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATIAAADQCAYAAACEPe34AAAQAElEQVR4Aeydi30Tu7bGl2TYkDgJpoJrKjhQwUkquNkV7FDBHiogqYChAkIFQAUhFZBTAd4VMAkJ4e4No/stPziOY8cvjeahb36j2J4ZLUl/yd8sPTyxwo0ESIAEak6AQlbzCmT2SYAERChkbAUkQAK1J0Ahq0EVTsvidfKwq2HaOR5rHoEvSafzNdnavUx2kutk58235NE7hBOEz8Og7zW8u0p2DvW6q2R7X+No3OYRuVkiCtlNHpX4dA2RukIjvLzZaD9fJY++oNE6DU4efNag7zUMz33C+3eIl14hPhpwtxIFYiZWIqAidJnspKjTTw/EfWlJ68SKeeXEHMDgPsIugtaxBn2vYd+IeanXGbHvWoijcWFD2422jxO1iZCofbSRjjRgsw0oQ+2LoI1JGxYa24kKkgqUQSO0Nxtt14jMbHTDc09FZB/x/jSIjwbcv1tf4Q6ujVa4VZ6AtgXU18sr3LRaECEr5k9kWusVL2vvamdXbSK8asE+2ojeHD9doY1cJtsHSF9Fce2EQhuwoRNkev8lgEbTuUp2Xv4m7rOFaOHMrrlDrHB+lR0CaA5aaLQQys+XNW6sUuVtzbzpjQb1c6LCYsQcGv/t4K4cPjViDqzYN0hfb36f9MaK9lkbUbPCrRQC2lBUwNCAQjba7rCxwvPbeVlKwZnoDQIjAWvhRoMT2jXES+n7U4sb61DUTjSPpedoTgbsnPM87ZkA7nIdvfNaNBQT9q47XhL10g6Rj76HNn6C78MQUHEA/5NWtQRsWuF3NY+a18uko13TadeUfsyWnoOIMgAR6+Iu9wlFrsqdt++hXWF8RPOGfHEvmAA440a20x+fQlJVaQfIytwdY2uuP5aGMlSuy7mYkM0tIy+YR0ArHyJ2gusq1wgMxkc0b5pH5I97QQSuks6+DieImERqupmKthUKWYAGBYHoqFAgqcqJGPI02rv4kuGO29Fp/dExvnoi8C3ZeWXEvTPlDSd4KknfTL+tXL/Y/qP/qQJ/KGQBKuG+5CmSqbKIIXsi+iXTL1uVGqjUfMNNrPsteYThBFNbL2xaFRgIsnP2uCpthUI2rZY8HtPZSSsmwJ3LX6ar1ED9lSq8JRWxoSde2UHydaloW/madEof67PrFoTxZxPQhmzE1HKZQ1Ua6Gy61T6jdT8Uscp74uuStOgya3nXtbNOfArZOvTmxEWXMuQasTm5Wf50FRro8rkuP4Z+qWMRMaVt0M1Eed/o+7IChawg8tqYbc26lJMohg30BGXpTJ7j5+kEwEqX2MyanZ4eqRlHd3VWtqyi2LISbnq66o01pIz6xSz1blsXjhCxOsxOF4YTE0WvlEFhCdxhmEJ2B5xVT6Eyu7bm3thE2fd10mLiGD9OEHgguY6HNn5MbKLY4x+79yQvZXbWjueC7/0QaJA39guIwaSFCvSvA3xzg8B1sgMRM6V8iW9kpOQPVsyfaCfBhyKsx3LT1JCAFfPv4dvGvJgKDOhWFSa+uF0n5rCq+QuZL4N2ghs5RD1kqsJHXfvGfZl09KF3Te1e9J9Q6ptZne1BxEbjYnUuhte840aegEvQ74D1WgIaEyP5fpMxmEEXs9PkMi5TNo6LTacFryxoN5tCNr0eVjqKu1AHX/T/XSlyoEjrJmNK6jqsm+8i4uujeKTGPwCXAjeDyS79PhSYxA3TFLIbONb7cF+k0d6YDDeLLy+60I392c2wmHNfWtLispQZlAxueCFnMO2MfPDwSgTy3ZWi1TCSFfeqhtn2luXBLKUEHQeSmm0WM5ihsmxDJRRDOraBs5V31NtuFX4sfEf+CjuFLlOxs5SF5TysYfXKQrURG7ZozU1NGzdKF9UduhWpV4aBbC61QGNfZEf3MsiTXyhki9TGAtf8Jj9jHDN6GtuKf4wNHlgMZC/QJHgJCORigowbW6TF3QsBE6OQiYlsOQbGBoMv9vTSPEsyYjDoH6J7GV7ISgJadLIOFVZ0GlW0rw0VXa0ovtwc4F+tBRrJC7/JU8hWq5tbsVpi/nXrYCQHbATLMXQM1InRX21EUqv+imlECp/Nt8KNBDwQQJer0csx4HXqAH/XA6roTJgAN3kKmadmlYs88WSqAmZWyoL+DrORYqbemOUA/0qNYhip8BuAHSbEFxJYm4BFF/Mq6QSZpVo7s0sYeCBOn/i6RAxeOkngOnlYqJjZyQT5mQTWI+DeXCadwgd318vj4rE5wL84qzKvpJCVSb+BaRuRDsbLPl31HzRY7wJqlxID/Do2VsWCME9jBChkYzD41h8BI+bwW/LoswqaCoI/y2EsIc98zphH1N/lYebR3C1TFLJbSFY7YES+rBaz0bG6BoKmY0wQtDcQh0LHSXySfMDn73vD6USyx2mWeTM4xRCFbAqUVQ4ZVNYq8SKJo4J28ECcemiVF7TrfrfYBH0wYJPbAYTsP0WXr6pCVnS5vdvPxf3l3WgDDRoxlRU0eIydb8nOKwcvsoHoSyySOys6cVt0ArHYdyKZcFuYwLigDZ60unDUQi7UPDzoL7Mw9MQ8E3Zi33s2ecucvXWEB1YiYEQoZLL8ZuChtaR18g0TA5fJ9oF6RctbWT0G0uteJjvHmgdYacyyEZSlKntvO80+Fp0ZW3QCsdjHXacXS1lH5fT82rVi3/w2HEdTD8mz/V/mIF4dtQ/xPHmA9CxX7f9i4/tNLvmRb5vT7NlpB3lseQIt+UEhWx7brRhGRP+By0Fr6KVdJTtvrpLtfYjPWjOe18lDeF7bB9ewp2Kp9kWk8B8zS9xbbyv9ehwCgQ2RSBxp3KOQ+a/o/mynEftOPSd4UJ8R3kHcDi/RDVWvSsM1RGoU9PMVhE/PXyY76eD6R1+cPPisHp9DV1bFUrgVTiAP5I1pQShkSsFD+C6SCbeiCXSRwL4R81JFqQWvTYOK1CjoZwPh0/N28M8vcL10JNatpHI7cR+2AnljWkSrfxjWJ6AL/hzFbH2QtNAEAj3cSILO/tZeyK7HuhWj9yW2hPMS02bSJFAJArmY3zfSrBcyM7URMgz2dsbHPb5huh7BjboU4696/Cp59AWvJ5cYJ0FIdOxEbRQJ1/BnSkXipe0aEICIPd9Ks8IXwE6iqLSQqfhcJTsvIUifHoj7Anf1jR2Oe6AgXcGfWTtERcdFdvV6hFctjKeoDbUFm28uMVh8mbS9rhtCmtms/PA4CTSZgA6rGDF7ELEgs5STLO3kgbI/q9ekHtS35NFJC+IDOIfIk0/BeQqbBwNRvPcJ6fRnwjTNS8/ChnxzJ4EYCGBMzDxDd7Lwha+zYNpZJ0IfVwG7gvela3ysGH1kcqg1Pv2ZME3Tyr1PV4Mu6TsVNvUIZcFN85+L+BRc4UYCVSfgxBxtiFERCzomNsnFTh4o47OKhgoYPKVDI6JdQilrG6a/byGmLXiE35JHDuHGWNslPLfr4SSDvr9MdhJ0Wz8N45aV9Yqmy2w1lMCpEfOknWaHpuBH9CzCzy5yUVHXwIvpfkMX0kI0TMkCNqeMN8baLDy30eSCvtf8i4h6dsKNBBpOQAVsbzM930VXslQvbJyzHf8Q8r2KGLwY/acOobqQIYvHtEigaQR6ueTPhwJW2ljYLKilCBlEbPQYYXoxs2qGx0kgHIG7UjodCtiTkCv178rQtHOlCNl9yVNkhiIGCNxJoKIEfnUhqyxgI3bBhewy6RxYPjZlxJ+vJFA1Ar8EDGNgletCzoJlZ50o6rgV97Io27RLAiSwMoFaCtiotEGFTL0xJBy6S4kkuZMACcwgUGsBG5UpqJC1xP0xSpivJEAC5RFwIlku5kVVZyGXJRNMyDBT2QW83WUzyOtJgAS8Ezi1Yp5tpZlOunk3XoZBGyrR3+Qnf74TCnYN02GWwxDIxb0eemGVWczqo+TBhMyJoTfmo8ZogwRWJPBTzNFWehH0gYcrZnXpaMGErCXmX0vnjhFIgAR8EXi/nWb6JBlf9iplJ5iQ5XwyRKUqnpmJikDPYGB/7RJX2EAQIcNAf8dU+0fhFa4iZo0E1iOALuXbjTTrrWel2rGDCNl9Phmi2q2AuWs0gXsipTy1VQJuQYSsJT86AcvEpEiABIYEnLgPTffGtKhBhEwTqnxgBkmggQQgZO8bWKxbRaKQ3ULCAyTQJAKtsyaVZlZZggjZT7mXzcoAj5MACRRDwIlkWyX8a7ZiSnO31SBC1gLQu7PBsySwCAFeswwBCNl/lrm+ztcGEbLvFLI6txHmvaYEjLhoekJBhOxxmmWOYlbTrwOzXWMCUYyPaf0EETJNCOEcgTsJkEAgApixLGMRbKDS3UwmoJC52jw29yYifiKBehJw0qKQFVB10UAtgB1NksDSBExEwzkhPbJo+utLtzhGIIECCLTkOwf7fXP9W1pN6Fr6xkJ7JFAYgY30ezS9oGAe2XDm8q/Cao2GSYAExglEI2Ja6GBCpolhFiWK331pWRlIoEwCuUhUTkNQIWuJpZCV2bojSZvFFIlpMaxgswjB9u8iZy6imZRgYJkQCdwmENXkWlAh03EyEffhNnMeIQES8EkAwzgcI/MJdNKWFdv4p1VOlpmfSSA0AVf1xbCegVjP9uaa20gzXYYR1d1iLhReQAKeCfzAMI5nk5U2F1zIlAbc3rf6ykACJFAIgd5gGKcQ25U0WoqQ/S025aB/JdsDM9UAAnAUonkO2ai6ShGywd3CvR5lonGvLBAJlEgAToIO35SYg/BJlyJkWkx6ZUqBgQT8E3Bio1p6oQSt/ikj0CsrgzrTbDoBeGPZdprRIwtZ0e304hDpcQYTELiHJtDM9CBk0Y2PaU2W5pFp4hqMmOf6ykACJLA+ASMuOm9MqZUuZLquLBcO/GtlMJDAugRysRSydSGuGv8fsexirgqP8UhgjEDDFsKOlezut/bu02HO6sB/LuZ3xx+UhwHOVBpJAN+fM/0uNbJwcwpVCSHTPG6l2RnGy470PQMJkMDyBKy46JZdjChVRsg0Q5tpljoxFDOFwUACSxL4Ke50ySiNubxSQqZU22l2mMcx+K/FZSABjwRaZx6N1cpU5YRM6W2lFwnGzPjDcoXBQAKLEejp8MxilzbvqkoKmWJGpRywm6kkGEhgPgEnLsqFsCMylRUyzaB2MylmSoKhLAJ1SRdCFvX/w6i0kGkjUjFDN/MZ3vOnTIDAnQSmEWhJK8qFsCMWdvSmyq/oZurSjD3cdThuVuWKYt5KIeBEzjbSrFdK4hVJtBZCpqy0otrpxQG8M/1tZtSVpjwYSGBEADf4aJdd9BngT22EDHnt7/DOjjfT8ydusN6Mgtanwj8xE3Biox4f07q3+qeOQcfOjBh2N+tYecyzTwK97TSLenxMYdZWyDTzo+4mBA0emnvr+FtNxcIQEYFYH9szWcW1FrJRYUaCZsU8ywfPN2tOl3NUSL6SwFQC9mjq4cgO2iaVVwVtNIamggYPLepFgk2qW5blNoFc5FTb/O0z8R1plJCNV58KWjs9f4puJ8fRxsHwgGodSgAACmtJREFUfYMI5McNKsxaRWmskI2o4I71sZ1eHEDQ+uNoo+N8JQF/BEqx1NtKv1LIhugbL2TDcgoErfdfQes/KojjaCM4fK0dgVzyo9plusAMRyNkI4YDQcsO4aGhy9kXtNEpvpJAXQjQG5uoqeiEbFT+MUFjl3MEha+1IODEvKhFRgNmcgEhC5ibEpLaSLN+lzMXw58+lcCfSS5HwIg7bqdZ9Cv5J6lFL2QjIDrLqd1NfI72KZsoO/dqE+iJcN3YtCqikI1RUe9sMz3XRbV8ysYYF76tBgH0Gn7XNlqN3FQrFxSyKfUB7+wAh+vkmSG73JtMACL2Au2SbXJGJVPIZoAx/D+bM8jwcGgCP8UcQcTS0OnWKT0K2YzaUhceYsa1OjP48HAYAipi22l2GCa1+qZCIbuj7jb7/2dTMuFGAh4ILGPCiWToTj6niC1GjUI2l5N7PfcSXkACfgmcOTF76E7yJ0gLcqWQzQFlxUb/0Lo5iHjaEwEHL8xhPGwTM+cQsTNPZqMwY6Mo5RqFxFgZhWwNfow6n4AbCZiYJ+0043jYfGS3rvAmZLcsN+TA12RrtyFFYTGqR+A0F/dicyhgJs2y6mWxHjmikM2pp5a03sy5hKcDElDvBcmdOnFvRdxrfdUwOCZ/4bXS+yD/7jVmxPfQhdzdSi9SCtj6VWbXN9FcC5fJToLSdRG4l0xABcDp+BG8FxWAdnpxsJleJPqqYTM9322n590NMY9VJNTTgcB9QLZ7CFXYf3lfm8g3hyz8VgmFbAbPL0mna8X8OeN0PQ/XN9c91MWzNsaP5nkvel5FQj2ddnqxv5meP8mH/8uhBGHT2ccjCOsT5IPeV4HtzxZou9am70t+iALQGwOEMneHgfBczFq/MdQZQITj9g1hcy9QLnRRxdu4lOZVRPqe11C8+uK7kWY9HOdeIAEK2RS4Q2/sjymneCggARUGN1hPdeYzWYjamXpsm4Pu6I2uqINwLpoWrv3Lifug3VgI154O2qtNtU3xWpSin+soZFM4Dr2xKWd4KCQBV4CITcs/ROejik8bHls7PX88GmdTcYI3+Hw86DGEJ3oNru1qHI2rNrRbO83+csd49SoEKGQT1OiNTQAp6aOKh3pOZSSvgqTCpAF5OB4Pegyhp9eUkTemOZ0AhWyCC72xCSAlfNQfSqt4lJA0k6wpAQrZWMXRGxuDUdJbFbHtNDssKXkmW1MCgYWs2pTojZVbPxg0f00RK7cO6po6hWxYc/DGOlbMv4cf+RKegM4k6gLk8CkzxdoTsLUvgacC3BfZFxGuG5NSth5mAn8vJWUm2ggCFLJhNbbEcd3YgEXQv04kg4jt6UygcCOBFQlQyAAO3couvlB8ygVYhN/Nc4pYeOpNS5FChhpFt5IiBg6hd52hbPOfzYbG3sj0KGSoVnYrASH8fsYZytWhM+ZNAtELGbqVHXYrbzaKAJ84uB8AckxJRC9kD+XH05gqvAplzSU/4rhYFWqiOXmIXshysRwfC9iejbjjrfQr/ztQQOYxJGWrWMjAeaJHFg54T8QehUuOKcVCIHohM2L+J5bKLrucObuUZVdBY9OPXshQs/TIAKHonV3KognHbT9qIdMZy7irf43SLx2VXcqlkTHCwgSiFrKHIh3hVjgBXfjKWcrCMUedQNRCxi9XkLbf2xJJhRsJFEggaiFTrk6q/09dNZ91DTrAz8dCl1V78aQbvZCJuLN4qjt4SXtcMxaceZQJRi9kTuSjcCuEgHpjhRimURKYIBC9kIlYCtlEo/D0kd6YJ5A0M5+AnX9JVa/wk6+tNDuDV/aXH2u0MiKQi3k9es9XEiiaQPRCNgDs+Nu/AQhff3stkffCjQQCEaCQAfTfYrk8ABx87UbcRy5t8UWTdhYhYBe5qOnXPE6zzHDQ32M1/1rF79EmTZHAbAIUsiGbn2JeDN/yZQ0C8MaON9Kst4YJRiWBpQlQyIbIdNA/F8cB6iGP1V/oja3OjjFXJUAhGyP3j9hDJ5IJt5UI5CKn9MZWQldqpCYkTiEbq0UdKxMxz4XbigRyzv6uSI7R1iNAIZvgp/+ejF3MCSiLfeQC2MU48aoCCFDIpkDVLiYO8zeYgLDonkt+tOi1vI4EfBNovJCtAky7mEbM74jL2TdAWGDvtaTFn3otAIqXFEPAFmO2/lZ10BpitoeSUMwA4a7dcAHsXXh4LgABCtkdkMfE7I6reEqESy7YCsolQCGbw38gZsJuk0zf4I2tvwB2umkeJYGFCVDIFkD1U8zbBS6L8pIfYskmypqvVqEpZAvUxz8i77lQ9jaoXOR0O83ord5GwyOBCVDIFgCus5hOHD2PW6xyLoC9xaSpB6pdLgrZgvXTEsvna91kxQWwN3nwU4kEbIlp1yppDPp/NCLsRslgy7kAdgCCfytBgEK2VDWYo6Uub+7F9MaaW7e1LBmFrF9ti/1Rr4yD/iI5vbHFGgyvCkaAQrY0ahf7M8vojS3dZhihaAIUsiUJ/y02jdkr+8nHHC3ZYnh5CAIUsiUp61IMifRJsrqKv8R1Y0vWFC+PiQCFbIXaVq9shWgNiGKPGlAIFqGBBChkK1SqemWxLZBFl/IIkx18EsgK7YVRiidAIVuRsRV7uGLUOkbroUsZU3nrWEeVyHNZmbBlJVz3dNU7iWGBrE5sGDH6XLa6Vxnz32ACFLK1Ktc0fszIiWGXcq02wsghCFDI1qAMr6zRP1vKMTu7lWbpGogYlQSCEKCQLYF5+qWN9crOttKLZHqZeZQEqkWAQrZmfahX5pr3iJ8exsX0n6+sSYfRSSAMAQqZB84Nm8FUEduDQHOphYe2QRNhCFDIPHDWLz28siMPpso2UX8RK5sg0y+FAIXME3Zd7e9EMqnvdrYh5pmKcn2LwJzHSoBC5qnmdbV/XX+DmYt5CxHbM2mWecJBMyQQlACFzCPudnpxCHO1GlvKB0ssDihiqDnugQj4T4ZC5pkpZvueezZZmDn9/SSXWBSGl4YDEqCQeYaNMSZ9rn/l/1EJupMvttNMPUjPBGiOBMIToJAVwPz/xDyv6sC/5gsi9pwr9guoeJosjQCFzDt6kcHAv6lcF1NFzInZg4gdF1BsmiSB0ghQyApC306z9/B83hZkfhWzPSvmGUTsbJXIjEMCVSZgq5y5uuftHxH9rWIVZjFPNyBiGL+rQl6EGwn4JkAh8010zJ52MTGLuedKXCiryys20/NdLq8YqxgRfmgYAQpZwRWqXpAVE/wH2CqeDulu8QkWBdcwzVeBgK1CJpqeB4jZR4yXhRz8P7XoSuo4XdPZsnwkoASs/mEongAG2Y/VQ3IFdjPVNgTzhXYlIZ4cDyu+WplCgQSWMU0hW4bWmteqh2ThKcGMV5FRAXNijjbFPIFg8omuAMw9LgI2ruKWX1r1lOAxPYHnpF3NtQTNwbtzQwGDSB5yQL/8+mUOyiFAISuHu8BzOh4JmhP3YdFsuL54ubcOA/nqgVHAFiXH65pMgEJWUu2OklVBa6cX+5vpudGlGrm4FxC2IwSIlRuFI/XgEJ610/PH7fTioJ1m7+mBjSjyNXYC/w8AAP//0XAkPAAAAAZJREFUAwBr4qI6qh4YewAAAABJRU5ErkJggg==" x="0" y="0" width="306" height="208"/>
           </svg>
 
@@ -43,74 +45,76 @@
               <clipPath id="clip0_113_17">
                 <rect width="531" height="441" fill="white"/>
               </clipPath>
-          </defs>
+            </defs>
           </svg>
         </div>
       </section>
 
       <section>
-        <ul>
-          <li>
-            <a href="work_example.html?id=1">
-              <span>Crimes Exemplares</span>
-              <span>Visual Identity & Branding</span>
-            </a>
-          </li>
-          
-          <li>
-            <a href="work_example.html?id=2">
-              <span>Edward Scissorhand</span>
-              <span>Web & Interface Design</span>
-            </a>
-          </li>
-          
-          <li>
-            <a href="work_example.html?id=3">
-              <span>Bauhaus Megazine</span>
-              <span>Editorial & Print Design</span>
-            </a>
-          </li>
-          
-          <li>
-            <a href="work_example.html?id=4">
-              <span>Conversas CCDM</span>
-              <span>Visual Identity & Branding</span>
-            </a>
-          </li>
+        <div class="content">
+          <ul>
+            <li>
+              <a href="work_example.html?id=1">
+                <span>Crimes Exemplares</span>
+                <span>Visual Identity & Branding</span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="work_example.html?id=2">
+                <span>Edward Scissorhand</span>
+                <span>Web & Interface Design</span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="work_example.html?id=3">
+                <span>Bauhaus Megazine</span>
+                <span>Editorial & Print Design</span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="work_example.html?id=4">
+                <span>Conversas CCDM</span>
+                <span>Visual Identity & Branding</span>
+              </a>
+            </li>
 
-          <li>
-            <a href="work_example.html?id=5">
-              <span>Tokyo</span>
-              <span>Experimental & Multimedia Design</span>
-            </a>
-          </li>
+            <li>
+              <a href="work_example.html?id=5">
+                <span>Tokyo</span>
+                <span>Experimental & Multimedia Design</span>
+              </a>
+            </li>
 
-          <li>
-            <a href="work_example.html?id=6">
-              <span>Breakfast Riddles</span>
-              <span>Experimental & Multimedia Design</span>
-            </a>
-          </li>
-        </ul>
+            <li>
+              <a href="work_example.html?id=6">
+                <span>Breakfast Riddles</span>
+                <span>Experimental & Multimedia Design</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </section>
     </main>
+    
     <footer id="contact">
       <a href="https://www.linkedin.com/in/carolina-rodrigues-432a1a30b/" target="_blank">
-        <img src="assets/images/linkedin (1).png" alt="LinkedIn logo">
-        LinkedIn
+        <img src="assets/images/linkedin (1).png" alt="LinkedIn logo">LinkedIn
       </a>
       <a href="mailto:carolinasecorodrigues@gmail.com">✉ Email</a>
     </footer>
 
     <div class="scroll-buttons">
-      <div class="scroll-up"></div>
-      <div class="scroll-down"></div>
+      <button class="scroll-up" aria-label="Scroll up"></button >
+      <button class="scroll-down" aria-label="Scroll down"></button >
     </div>
 
     <canvas id="drawCanvas"></canvas>
-    <button id="drawToggle">✎</button>
-    <button id="clearDrawing">⟳</button>
-    
+    <button id="drawToggle" aria-label="Toggle drawing">✎</button>
+    <button id="clearDrawing" aria-label="Clear drawing">⟳</button>
+
     <script src="js/script.js"></script>
   </body>
 </html>
