@@ -390,22 +390,22 @@ article header {
   right: 0%;
 }
 
-#pos_1{
+.pos_1{
   bottom: 3000%;
   left: -7%;
 }
 
-#pos_2{
+.pos_2{
   bottom: 1500%;
   right: -15%;
 }
 
-#pos_3{
+.pos_3{
   bottom: 1100%;
   left: 0%;
 }
 
-#pos_4{
+.pos_4{
   bottom: -50%;
   left: 0%;
 }

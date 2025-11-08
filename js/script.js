@@ -203,60 +203,43 @@ canvas.onmouseup = () => {
 loadDrawing();
 
 
+const contentContainer = document.getElementById("content")
+if (contentContainer && Array.isArray(projects)) {
+  const urlId = new URLSearchParams(window.location.search).get("id")
+  const selectedProjectId = urlId !== null ? Number(urlId) : undefined
+  const selectedProject = projects.find(project => project.id === selectedProjectId)
 
-const conteudo = document.getElementById("conteudo");
-const params = new URLSearchParams(window.location.search);
-const id = parseInt(params.get("id"));
-const trabalho = trabalhos.find(t => t.id === id);
+  if (!selectedProject) contentContainer.innerHTML = "<h2>Project not found</h2>"
+  else {
+    const renderContent = key => {
+      const value = selectedProject[key]
+      if (!value) 
+      return ""
 
-if (!trabalho) {
-    conteudo.innerHTML = `<h2>It's not possible to find the project. Sorry ᴖ̈</h2>`;
-} else {
-  const addSection = html => {
-    const s = document.createElement("section");
-    s.classList.add("section");
-    const contentDiv = document.createElement("div");
-    contentDiv.classList.add("content");
-    contentDiv.innerHTML = html;
-    s.appendChild(contentDiv);
-    conteudo.appendChild(s);
-    return s;
-  };
+      if (key === "title") 
+      return `<h1>${value}</h1>`
 
-  const grupos = [
-    ["title", "text1"],      
-    ["img1", "text2"],     
-    ["video"]                   
-  ];
+      if (key.startsWith("text")) 
+      return `<p>${value}</p>`
 
-  grupos.forEach(grupo => {
-    let html = "";
-    grupo.forEach(key => {
-      if (!trabalho[key]) return;
-      if (key === "title") html += `<h1>${trabalho[key]}</h1>`;
-      else if (key.startsWith("text")) html += `<p>${trabalho[key]}</p>`;
-      else if (key.startsWith("img")) html += `<img src="${trabalho[key]}" alt="Project Image">`;
-      else if (key === "video") html += `
-        <video class="video" controls autoplay muted loop>
-          <source src="${trabalho[key]}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>`;
-    });
+      if (key === "text1") 
+      return `<p>${value}</p>`
 
-    if (html) addSection(html);
-    resizeCanvas();
-  });
+      if (key.startsWith("img")) 
+      return `<img src="${value}" alt="Project Image">`
 
-  if (trabalho.decor && trabalho.decor.length) {
-    const decorSection = document.createElement("section");
-    decorSection.classList.add("section");
-    const decorDiv = document.createElement("div");
-    decorDiv.classList.add("decor");
+      if (key === "video") 
+      return `<video controls autoplay muted loop><source src="${value}" type="video/mp4"></video>`
+    };
 
-    trabalho.decor.forEach(svgString => decorDiv.insertAdjacentHTML("beforeend", svgString));
+    Object.keys(selectedProject).forEach(key => {
+      if (key === "decor") return
+      const html = renderContent(key)
+      if (html) contentContainer.innerHTML += `<section class="section">${html}</section>`
+    })
 
-    decorSection.appendChild(decorDiv);
-    conteudo.appendChild(decorSection);
-    resizeCanvas();
+    if (selectedProject.decor?.length)
+      contentContainer.innerHTML += `<section class="section"><div class="decor">${selectedProject.decor.join("")}</div></section>`
+    resizeCanvas?.()
   }
 }
