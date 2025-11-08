@@ -27,7 +27,6 @@ if (document.getElementById('word1')) {
     }
   }
 
-
   const updateWords = async () => {
     const word1 = await getWord('creative', 'creative')
     const word2 = await getWord('design', 'technology')
