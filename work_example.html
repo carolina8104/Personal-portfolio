@@ -8,34 +8,37 @@
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="work.html">Work</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button id="theme-toggle">☀︎</button>
-    </nav>
+    <div id="content-wrapper">
+      <canvas id="drawCanvas"></canvas>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle">☀︎</button>
+      </nav>
 
-    <main id="content"></main>
+      <main id="content"></main>
 
-    <footer id="contact">
-      <a href="https://www.linkedin.com/in/carolina-rodrigues-432a1a30b/" target="_blank">
-        <img src="assets/images/linkedin (1).png" alt="LinkedIn logo"> LinkedIn
-      </a>
-      <a href="mailto:carolinasecorodrigues@gmail.com">✉ Email</a>
-    </footer>
-    
-    <div class="scroll-buttons">
-      <button class="scroll-up" aria-label="Scroll up"></button >
-      <button class="scroll-down" aria-label="Scroll down"></button >
+      <footer id="contact">
+        <a href="https://www.linkedin.com/in/carolina-rodrigues-432a1a30b/" target="_blank">
+          <img src="assets/images/linkedin (1).png" alt="LinkedIn logo"> LinkedIn
+        </a>
+        <a href="mailto:carolinasecorodrigues@gmail.com">✉ Email</a>
+      </footer>
+      
+      <div class="scroll-buttons">
+        <button class="scroll-up" aria-label="Scroll up"></button >
+        <button class="scroll-down" aria-label="Scroll down"></button >
+      </div>
+      <button id="drawToggle" aria-label="Toggle drawing">✎</button>
+      <button id="clearDrawing" aria-label="Clear drawing">⟳</button>
+      <div id="drawOverlay"></div>
+
+      <script src="js/projects.js"></script>
+      <script src="js/script.js"></script>
     </div>
-    <canvas id="drawCanvas"></canvas>
-    <button id="drawToggle" aria-label="Toggle drawing">✎</button>
-    <button id="clearDrawing" aria-label="Clear drawing">⟳</button>
-
-  <script src="js/projects.js"></script>
-  <script src="js/script.js"></script>
-</body>
+  </body>
 </html>

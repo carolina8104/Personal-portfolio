@@ -1,75 +1,65 @@
-const colors = ["#1B64CB", "#FFA7E1", "#EE1321", "#FFCB09", "#F6700F", "#02A054"];
-const selectionColor = () => {
-  const color = colors[Math.floor(Math.random() * colors.length)];
-  document.documentElement.style.setProperty("--selection-color", color);
-};
-document.addEventListener("selectionchange", selectionColor);
+const colors = ["#1B64CB", "#FFA7E1", "#EE1321", "#FFCB09", "#F6700F", "#02A054"]
+document.addEventListener("selectionchange", () => {
+  const color = colors[Math.floor(Math.random() * colors.length)]
+  document.documentElement.style.setProperty("--selection-color", color)
+})
 
-const carousel = document.querySelector('.reel');
-const next = document.querySelector('.next');
-const prev = document.querySelector('.prev');
-const scrollAmount = carousel?.querySelector('.card')?.offsetWidth || 320;
+const carousel = document.querySelector('.reel')
+const next = document.querySelector('.next')
+const prev = document.querySelector('.prev')
+const scrollAmount = carousel?.querySelector('.card')?.offsetWidth || 320
 
-next?.addEventListener('click', () => carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
-prev?.addEventListener('click', () => carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' }));
+next?.addEventListener('click', () => carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' }))
+prev?.addEventListener('click', () => carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' }))
 
 
-if (document.getElementById('word1')) {
-  const getWord = async (topic, fallback) => {
-    try {
-      const res = await fetch(`https://api.datamuse.com/words?ml=${encodeURIComponent(topic)}&max=40`)
-      if (!res.ok) throw new Error('API error')
-      const data = await res.json()
-      if (!data || data.length === 0) return fallback
-      return data[Math.floor(Math.random() * data.length)].word
-    } catch {
-      return fallback
-    }
-  }
+const word1El = document.getElementById('word1')
+const word2El = document.getElementById('word2')
+
+if (word1El && word2El) {
+const getWord = (topic, fallback) =>
+  fetch(`https://api.datamuse.com/words?ml=${encodeURIComponent(topic)}&max=40`)
+    .then(res => (res.ok ? res.json() : []))
+    .then(data => data.length ? data[Math.floor(Math.random() * data.length)].word : fallback)
+    .catch(() => fallback)
 
   const updateWords = async () => {
-    const word1 = await getWord('creative', 'creative')
-    const word2 = await getWord('design', 'technology')
-    document.getElementById('word1').textContent = word1
-    document.getElementById('word2').textContent = word2
+    const [word1, word2] = await Promise.all([
+      getWord('creative', 'creative'),
+      getWord('design', 'technology')
+    ])
+    word1El.textContent = word1
+    word2El.textContent = word2
   }
 
   updateWords()
   setInterval(updateWords, 5000)
 }
 
-if (document.getElementById("hello")) {
+const helloEl = document.getElementById("hello")
+if (helloEl) {
   const langs = ['pt', 'en', 'fr', 'de', 'it', 'sv', 'pl', 'fi', 'da', 'es', 'no']
   const word = 'Olá'
-  const helloEl = document.getElementById('hello')
   let i = 0
 
   function showNext() {
     const lang = langs[i]
+    i = (i + 1) % langs.length
 
     if (lang === 'pt') {
-      helloEl.textContent = 'Olá'
-      i = (i + 1) % langs.length
+      helloEl.textContent = word
       return
     }
 
     fetch(`https://api.mymemory.translated.net/get?q=${word}&langpair=pt|${lang}`)
       .then(res => res.json())
       .then(data => {
-        let text = data.responseData.translatedText
-
-        // se a API retornar aviso ou texto inválido, usa "Hello!"
-        if (!text || text.includes('MYMEMORY WARNING')) {
-          text = 'Hello!'
-        }
-
-        helloEl.textContent = text
-        i = (i + 1) % langs.length
+        const text = data?.responseData?.translatedText
+        helloEl.textContent =
+          !text || text.includes('MYMEMORY WARNING') ? 'Hello!' : text
       })
       .catch(() => {
-        // fallback em caso de erro de rede
         helloEl.textContent = 'Hello!'
-        i = (i + 1) % langs.length
       })
   }
 
@@ -109,98 +99,88 @@ document.addEventListener("click", function(event) {
   }
 })
 
+let isDrawingEnabled = false
+let isCurrentlyDrawing = false
+let currentColor = colors[0]
+const storageKey = `savedDrawing_${window.location.pathname}`
 
+const drawCanvas = document.getElementById('drawCanvas')
+const drawOverlay = document.getElementById('drawOverlay')
+const drawContext = drawCanvas.getContext('2d')
+const toggleDraw_Button = document.getElementById('drawToggle')
+const clearDraw_Button = document.getElementById('clearDrawing')
 
+const resizeCanvasAndOverlay = () => {
+  const width = document.documentElement.scrollWidth
+  const height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, window.innerHeight)
+  const previousDrawing = drawCanvas.toDataURL()
 
+  drawCanvas.width = width
+  drawCanvas.height = height
+  Object.assign(drawOverlay.style, { width: `${width}px`, height: `${height}px` })
 
+  const img = new Image()
+  img.onload = () => drawContext.drawImage(img, 0, 0)
+  img.src = previousDrawing
+}
 
+['resize', 'load'].forEach(event => window.addEventListener(event, resizeCanvasAndOverlay))
+resizeCanvasAndOverlay()
 
-
-const canvas = document.getElementById('drawCanvas');
-const ctx = canvas.getContext('2d');
-const drawBtn = document.getElementById('drawToggle');
-const clearBtn = document.getElementById('clearDrawing');
-const getBlockedSections = () => document.querySelectorAll('.content, nav, footer, .carousel-section');
-let drawingEnabled = false, isDrawing = false, currentColor = colors[0];
-
- const pageKey = 'savedDrawing_' + window.location.pathname;
-
-const resizeCanvas = () => {
-  canvas.width = document.documentElement.scrollWidth;
-  canvas.height = Math.max(
-    document.body.scrollHeight,
-    document.documentElement.scrollHeight,
-    window.innerHeight
-  );
-};
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-
-const saveDrawing = () => localStorage.setItem(pageKey, canvas.toDataURL('image/png'));
-
+const saveDrawing = () => localStorage.setItem(storageKey, drawCanvas.toDataURL('image/png'))
 const loadDrawing = () => {
-  const saved = localStorage.getItem(pageKey);
-  if (!saved) return;
-  const img = new Image();
-  img.onload = () => ctx.drawImage(img, 0, 0);
-  img.src = saved;
-};
+  const saved = localStorage.getItem(storageKey)
+  if (!saved) return
+  const img = new Image()
+  img.onload = () => drawContext.drawImage(img, 0, 0)
+  img.src = saved
+}
+loadDrawing()
 
-clearBtn.onclick = () => {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  localStorage.removeItem(pageKey);
-};
+clearDraw_Button.addEventListener('click', () => {
+  drawContext.clearRect(0, 0, drawCanvas.width, drawCanvas.height)
+  localStorage.removeItem(storageKey)
+})
 
-const inBlockedZone = (x, y) => {
-  const blockedSections = document.querySelectorAll('.content, nav, footer, .carousel-section');
-  return [...blockedSections].some(sec => {
-    const r = sec.getBoundingClientRect();
-    const t = r.top + window.scrollY, l = r.left;
-    return x >= l && x <= r.right && y >= t && y <= r.bottom;
-  });
-};
+toggleDraw_Button.addEventListener('click', () => {
+  isDrawingEnabled = !isDrawingEnabled
+  toggleDraw_Button.textContent = isDrawingEnabled ? '✖' : '✎'
+  drawOverlay.style.pointerEvents = isDrawingEnabled ? 'auto' : 'none'
+  drawOverlay.style.cursor = isDrawingEnabled
+    ? 'url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'32\' height=\'32\'><text y=\'24\' font-size=\'28\' fill=\'black\' stroke=\'white\'>✎</text></svg>") 0 24, auto'
+    : 'auto'
+})
 
-drawBtn.onclick = () => {
-  drawingEnabled = !drawingEnabled;
-  drawBtn.textContent = drawingEnabled ? '✖' : '✎';
-  canvas.style.pointerEvents = drawingEnabled ? 'auto' : 'none';
-  document.body.style.cursor = drawingEnabled
-    ? 'url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'32\' height=\'32\'><text y=\'24\' font-size=\'28\'>✎</text></svg>") 0 24, auto'
-    : 'auto';
-};
+const getPointerPos = e => ({ x: e.pageX, y: e.pageY })
+const startDrawing = e => {
+  if (!isDrawingEnabled) return
+  e.preventDefault()
+  currentColor = colors[Math.floor(Math.random() * colors.length)]
+  const { x, y } = getPointerPos(e)
+  isCurrentlyDrawing = true
+  drawContext.beginPath()
+  drawContext.moveTo(x, y)
+}
 
-canvas.onmousedown = e => {
-  if (!drawingEnabled || inBlockedZone(e.pageX, e.pageY)) return;
-  currentColor = colors[Math.floor(Math.random() * colors.length)];
-  isDrawing = true;
-  ctx.beginPath();
-  ctx.moveTo(e.pageX, e.pageY);
-};
+const drawLine = e => {
+  if (!isCurrentlyDrawing) return
+  const { x, y } = getPointerPos(e)
+  drawContext.lineTo(x, y)
+  drawContext.strokeStyle = currentColor
+  drawContext.lineWidth = 8
+  drawContext.lineCap = 'round'
+  drawContext.stroke()
+}
 
-canvas.onmousemove = e => {
-  if (!isDrawing) {
-    if (drawingEnabled) {
-      document.body.style.cursor = inBlockedZone(e.pageX, e.pageY)
-        ? 'url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'-10 -10 68 68\' width=\'30\' height=\'30\'><text x=\'8\' y=\'36\' font-size=\'38\' fill=\'white\' stroke=\'black\' stroke-width=\'1.5\'>⃠</text></svg>") 0 24, auto'
-        : 'url("data:image/svg+xml;utf8,<svg class=\'cursor\' xmlns=\'http://www.w3.org/2000/svg\' width=\'32\' height=\'32\'><text y=\'24\' font-size=\'28\' fill=\'white\' stroke=\'black\'>✎</text></svg>") 0 24, auto';
-    }
-    return;
-  }
+const endDrawing = () => {
+  if (!isCurrentlyDrawing) return
+  isCurrentlyDrawing = false
+  saveDrawing()
+}
 
-  if (inBlockedZone(e.pageX, e.pageY)) return (isDrawing = false);
-  ctx.lineTo(e.pageX, e.pageY);
-  ctx.strokeStyle = currentColor;
-  ctx.lineWidth = 8;
-  ctx.lineCap = 'round';
-  ctx.stroke();
-};
+[['mousedown', startDrawing], ['mousemove', drawLine], ['mouseup', endDrawing]]
+  .forEach(([eventName, handler]) => drawOverlay.addEventListener(eventName, handler))
 
-canvas.onmouseup = () => {
-  isDrawing = false;
-  saveDrawing();
-};
-
-loadDrawing();
 
 
 const contentContainer = document.getElementById("content")
@@ -222,24 +202,21 @@ if (contentContainer && Array.isArray(projects)) {
       if (key.startsWith("text")) 
       return `<p>${value}</p>`
 
-      if (key === "text1") 
-      return `<p>${value}</p>`
-
       if (key.startsWith("img")) 
       return `<img src="${value}" alt="Project Image">`
 
       if (key === "video") 
       return `<video controls autoplay muted loop><source src="${value}" type="video/mp4"></video>`
-    };
-
-    Object.keys(selectedProject).forEach(key => {
-      if (key === "decor") return
+    }
+  
+    for (const key of Object.keys(selectedProject)) {
+      if (key === "decor") continue
       const html = renderContent(key)
       if (html) contentContainer.innerHTML += `<section class="section">${html}</section>`
-    })
+    }
 
     if (selectedProject.decor?.length)
       contentContainer.innerHTML += `<section class="section"><div class="decor">${selectedProject.decor.join("")}</div></section>`
-    resizeCanvas?.()
+      resizeAll?.()
   }
 }
