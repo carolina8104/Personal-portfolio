@@ -251,18 +251,15 @@ article header {
 }
 
 .interests {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  flex-wrap: wrap;
-  gap: 0.8rem; 
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .interest-card {
-  flex: 1 1 calc(25% - 1rem); 
   border: 2px solid;
   border-radius: 15px;
-  padding: 1rem 1rem;
+  padding: 1rem;
   text-align: center;
   box-sizing: border-box;
   transition: transform 0.3s ease;
@@ -499,7 +496,12 @@ canvas {
 
 @media (max-width: 768px) {
   h1{
-    font-size:7rem; 
+    font-size:6.5rem; 
+  }
+
+  #content .section h1{
+    font-size:3.5rem; 
+    margin-bottom:-10%;
   }
 
   h2{
@@ -522,55 +524,14 @@ canvas {
     font-size: 1.4rem;
   }
 
-  footer {
-    width: 80vw;
-    margin: 5rem auto 0; 
-    padding: 2rem 0;
-  }
-
-  .decor{
-    width:50%;
-    opacity: 0.6;
-  }
-
-  svg{
-    width:80%;
-  }
-
-  #drawCanvas,
-  #drawOverlay,
-  #drawToggle,
-  #clearDrawing {
-      display: none; /
-  }
-
-  #theme-toggle {
-    position: absolute;
-    top: 50%;
+  section ul li a {
+    flex-direction: column;   
+    align-items: flex-start; 
+    gap: 0.5rem;             
   }
 
   nav {
     padding: 0%;
-  }
-
-  #azul_1{
-    top: 0%;
-  }
-
-  #amarelo_1{
-    top: -20%;
-  }
-
-  #verde_1{
-    top: 65%;
-  }
-
-  #img1 {
-    top: 5%;
-  }
-
-  #img2 {
-    top: 25%;
   }
 
   nav ul {
@@ -597,6 +558,56 @@ canvas {
     pointer-events: auto;
   }
 
+  footer {
+    width: 80vw;
+    margin: 5rem auto 0; 
+    padding: 2rem 0;
+  }
+
+  .decor{
+    width:50%;
+    opacity: 0.6;
+  }
+
+  svg{
+    width:80%;
+  }
+
+  .interests {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .interests p {
+    font-size: 1.1rem;
+}
+
+  #drawCanvas,
+  #drawOverlay,
+  #drawToggle,
+  #clearDrawing {
+      display: none; /
+  }
+
+  #azul_1{
+    top: 0%;
+  }
+
+  #amarelo_1{
+    top: -20%;
+  }
+
+  #verde_1{
+    top: 65%;
+  }
+
+  #img1 {
+    top: 5%;
+  }
+
+  #img2 {
+    top: 25%;
+  }
+
   #menu-toggle {
     display: inline-block;
     position: absolute;
@@ -608,11 +619,5 @@ canvas {
     cursor: pointer;
     color: var(--text-border-selection-color);
     transition: color 0.2s ease, transform 0.2s ease;
-  }
-
-  section ul li a {
-    flex-direction: column;   /* empilha os spans verticalmente */
-    align-items: flex-start;  /* alinha os spans à esquerda */
-    gap: 0.5rem;              /* espaçamento entre os spans */
   }
 }
