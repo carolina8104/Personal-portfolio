@@ -220,3 +220,21 @@ if (contentContainer && Array.isArray(projects)) {
       resizeAll?.()
   }
 }
+
+
+const menuToggle = document.createElement("button");
+menuToggle.id = "menu-toggle";
+menuToggle.textContent = "☰";
+
+// adiciona o botão hamburger antes do botão de tema
+const nav = document.querySelector("nav");
+const themeButton = document.getElementById("theme-toggle");
+nav.insertBefore(menuToggle, themeButton);
+
+// seleciona o <ul> dentro do nav
+const navMenu = nav.querySelector("ul");
+
+// evento para mostrar/esconder o menu
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});

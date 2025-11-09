@@ -259,7 +259,7 @@ article header {
 }
 
 .interest-card {
-  flex: 1 1 calc(20% - 1rem); 
+  flex: 1 1 calc(25% - 1rem); 
   border: 2px solid;
   border-radius: 15px;
   padding: 1rem 1rem;
@@ -471,4 +471,148 @@ canvas {
   height: 100%;
   pointer-events: none;
   z-index: 5; 
+}
+
+
+#menu-toggle {
+  display: none;
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #drawCanvas,
+  #drawOverlay,
+  #drawToggle,
+  #clearDrawing {
+      display: none; 
+  }
+
+  h1{
+    font-size:7rem; 
+  }
+
+  svg{
+    opacity:0.6;
+  }
+}
+
+
+@media (max-width: 768px) {
+  h1{
+    font-size:7rem; 
+  }
+
+  h2{
+    font-size: 2rem;
+  }
+
+  p{
+    font-size: 1.4rem;
+  }
+
+  section{
+    padding: 2vh 10vw 2vh 10vw;
+  }
+
+  a{
+    font-size: 1rem;
+  }
+
+  p a{
+    font-size: 1.4rem;
+  }
+
+  footer {
+    width: 80vw;
+    margin: 5rem auto 0; 
+    padding: 2rem 0;
+  }
+
+  .decor{
+    width:50%;
+    opacity: 0.6;
+  }
+
+  svg{
+    width:80%;
+  }
+
+  #drawCanvas,
+  #drawOverlay,
+  #drawToggle,
+  #clearDrawing {
+      display: none; /
+  }
+
+  #theme-toggle {
+    position: absolute;
+    top: 50%;
+  }
+
+  nav {
+    padding: 0%;
+  }
+
+  #azul_1{
+    top: 0%;
+  }
+
+  #amarelo_1{
+    top: -20%;
+  }
+
+  #verde_1{
+    top: 65%;
+  }
+
+  #img1 {
+    top: 5%;
+  }
+
+  #img2 {
+    top: 25%;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 7.5vh;
+    top: 1vh;
+    width: 30%;
+    background-color: var(--background-color);
+    text-align: left;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  nav ul.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  #menu-toggle {
+    display: inline-block;
+    position: absolute;
+    left: 1rem;
+    top:1vh;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-border-selection-color);
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  section ul li a {
+    flex-direction: column;   /* empilha os spans verticalmente */
+    align-items: flex-start;  /* alinha os spans à esquerda */
+    gap: 0.5rem;              /* espaçamento entre os spans */
+  }
 }
