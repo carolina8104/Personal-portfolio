@@ -8,20 +8,16 @@ nav.insertBefore(menuToggle, themeButton)
 
 const navMenu = nav.querySelector("ul")
 
-// Alterna o menu ao clicar no botão
 menuToggle.addEventListener("click", (e) => {
-  e.stopPropagation() // impede que o clique se propague para o document
+  e.stopPropagation()
   navMenu.classList.toggle("show")
 })
 
-// Fecha o menu ao clicar fora
 document.addEventListener("click", (e) => {
-  // se o menu estiver aberto e o clique não for no menu ou no botão
   if (navMenu.classList.contains("show") && !nav.contains(e.target)) {
     navMenu.classList.remove("show")
   }
 })
-
 
 const colors = ["#1B64CB", "#FFA7E1", "#EE1321", "#FFCB09", "#F6700F", "#02A054"]
 document.addEventListener("selectionchange", () => {

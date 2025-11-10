@@ -1,2 +1,6 @@
-# Personal portfolio
-Assignment 2 — Static Website. Web Development 2025 MDM - University of Coimbra
+# Personal portfolio - Assignment 2 (Static Website) Web Development 2025 MDM - University of Coimbra
+This project was created as an assignment for the web development course. I decided to create a personal portfolio website with the goal of presenting my professional experience, interests, projects I've been part of, and contact options in a light and dynamic way. The aim was to translate the visual and conceptual language of my PDF portfolio into a digital format, taking advantage of the web’s possibilities — such as motion, interactivity, personalization, and video to create a more engaging and immersive experience.
+
+The movement of lines and animated elements was designed to bring energy and dynamism to the page, reflecting my creative process. The drawing functionality emerged as a way to involve the user, allowing them to actively participate in the experience that its connected to the design process, where sketching and drawing are essential for thinking and building ideas.
+
+Overall, I wanted to create a visual environment that conveys creativity and approachability, with simple navigation and a friendly, relaxed tone, taking advantage of modern HTML and CSS for layout and animations, and JavaScript for dynamic interactions such as the carousel, theme toggle, menus, and drawing feature. I also integrated content fetched from public APIs in a way that made sense within the portfolio’s concept, adding subtle layers of interaction.
