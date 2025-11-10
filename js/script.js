@@ -227,7 +227,7 @@ if (contentContainer && Array.isArray(projects)) {
       return `<img src="${value}" alt="Project Image">`
 
       if (key === "video") 
-      return `<video controls autoplay muted loop><source src="${value}" type="video/mp4"></video>`
+      return `<video controls autoplay muted loop playsinline><source src="${value}" type="video/mp4"></video>`
     }
   
     for (const key of Object.keys(selectedProject)) {
