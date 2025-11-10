@@ -238,6 +238,5 @@ if (contentContainer && Array.isArray(projects)) {
 
     if (selectedProject.decor?.length)
       contentContainer.innerHTML += `<section class="section"><div class="decor">${selectedProject.decor.join("")}</div></section>`
-      resizeAll?.()
   }
 }
