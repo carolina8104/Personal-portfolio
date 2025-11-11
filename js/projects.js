@@ -5,7 +5,7 @@ const projects = [
     text1: "Crimes Exemplares is a transmediation of Max Aub's work, realized through both editorial and digital formats. The project explores the comic morbidity of the original stories, emphasizing their dark and criminal undertones through noir-inspired illustrations. These visuals are combined with avant-garde collages, adding a playful, surreal dimension and amplifying the sense of disconnection from reality. By merging traditional book design with a dynamic online experience, the project reinterprets Aub’s work for contemporary audiences.",
     img1: "assets/images/crimes_final_img.png", 
     text2: "The work was developed as part of a group project in an academic context. It demonstrates practical skills in identity creation, illustration and collage, editorial design, and web design. The combination of print and digital formats highlights the tension between grim content and humorous presentation, inviting readers to engage with the stories in multiple ways while showcasing a versatile approach to storytelling.",
-    video: "assets/videos/Crimes Exemplares.mp4",
+    video: "assets/videos/Crimes_Exemplares.mp4",
       decor: [
       `<svg class="pos_1" xmlns="http://www.w3.org/2000/svg" width="392" height="944" viewBox="0 0 392 944" fill="none">
         <path d="M191.187 103.88C190.579 108.153 188.13 119.165 186.896 139.1C186.408 146.987 184.429 176.051 186.565 221.113C188.863 269.596 200.984 289.803 209.87 306.377C219.418 329.138 226.729 340.151 237.493 352.747C240.264 356.136 243.303 359.782 246.433 363.539" stroke="#02A054" stroke-width="16" stroke-linecap="round"/>
