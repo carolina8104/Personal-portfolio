@@ -162,6 +162,7 @@ footer img{
   border-left: 2px solid;
   cursor: pointer;
   transition: transform 0.2s ease;
+  color:var(--text-border-selection-color);
 }
 
 .scroll-up {
